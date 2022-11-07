@@ -1,0 +1,33 @@
+version: "3"
+services:
+    proxy:
+      build:
+        context: ./proxy
+        dockerfile: Dockerfile
+      ports:
+        - "8000:80"
+
+    target1:
+      build:
+        context: ./target
+        dockerfile: Dockerfile
+
+    target2:
+      build:
+        context: ./target
+        dockerfile: Dockerfile
+
+    target3:
+      build:
+        context: ./target
+        dockerfile: Dockerfile
+
+    target4:
+      build:
+        context: ./target
+        dockerfile: Dockerfile
+
+    target5:
+      build:
+        context: ./target
+        dockerfile: Dockerfile
