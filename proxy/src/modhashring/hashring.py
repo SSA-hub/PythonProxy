@@ -9,12 +9,14 @@ class HashRing:
         return self.nodes[key % self.n]
 
     def delete_node(self, node):
-        self.nodes.remove(node)
-        self.n -= 1
+        if node in self.nodes:
+            self.nodes.remove(node)
+            self.n -= 1
 
     def add_node(self, node):
-        self.nodes.append(node)
-        self.n += 1
+        if node not in self.nodes:
+            self.nodes.append(node)
+            self.n += 1
 
     def get_n(self):
         return self.n

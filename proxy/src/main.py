@@ -10,9 +10,11 @@ from modhashring.hashring import HashRing
 
 app = FastAPI()
 targets = []
+sleeping_time = 1
 with open('appsettings.json', 'r') as config_file:
     config = json.load(config_file)
     targets = config['ports']
+    sleeping_time = config['sleeping']
 ring = HashRing(nodes=targets)
 deleted = []
 count = 0
@@ -30,7 +32,7 @@ def try_connect():
                     deleted.remove(d)
             except requests.ConnectionError:
                 a = 1
-        time.sleep(1)
+        time.sleep(sleeping_time)
 
 
 t = Thread(target=try_connect)
