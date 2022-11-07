@@ -1,6 +1,6 @@
 # PythonProxy
 
-![alt text]()
+![alt text](https://github.com/SSA-hub/PythonProxy/blob/master/image.png)
 
 HTTP прокси сервер, равномерно распределяющий нагрузку между сервисами.  
 Адреса веб-сервисов задаются в файле proxy/src/appsettings.json  
